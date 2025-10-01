@@ -1,0 +1,194 @@
+[
+  {
+    "scientificName": "Chiloscyllium plagiosum",
+    "common_name": "Whitespotted Bamboshark",
+    "min_temp_c": 23,
+    "max_temp_c": 30,
+    "min_chl_a_mg_m3": 0.08,
+    "max_chl_a_mg_m3": 0.4
+  },
+  {
+    "scientificName": "Triaenodon obesus",
+    "common_name": "Whitetip Reef Shark",
+    "min_temp_c": 22,
+    "max_temp_c": 28,
+    "min_chl_a_mg_m3": 0.05,
+    "max_chl_a_mg_m3": 0.3
+  },
+  {
+    "scientificName": "Squalus acanthias",
+    "common_name": "Spiny Dogfish",
+    "min_temp_c": 6,
+    "max_temp_c": 15,
+    "min_chl_a_mg_m3": 0.8,
+    "max_chl_a_mg_m3": 6.0
+  },
+  {
+    "scientificName": "Galeocerdo cuvier",
+    "common_name": "Tiger Shark",
+    "min_temp_c": 22,
+    "max_temp_c": 31,
+    "min_chl_a_mg_m3": 0.1,
+    "max_chl_a_mg_m3": 1.5
+  },
+  {
+    "scientificName": "Somniosus microcephalus",
+    "common_name": "Greenland Shark",
+    "min_temp_c": -1,
+    "max_temp_c": 10,
+    "min_chl_a_mg_m3": 0.1,
+    "max_chl_a_mg_m3": 0.8
+  },
+  {
+    "scientificName": "Carcharodon carcharias",
+    "common_name": "Great White Shark",
+    "min_temp_c": 15,
+    "max_temp_c": 22,
+    "min_chl_a_mg_m3": 0.5,
+    "max_chl_a_mg_m3": 5.0
+  },
+  {
+    "scientificName": "Cetorhinus maximus",
+    "common_name": "Basking Shark",
+    "min_temp_c": 8,
+    "max_temp_c": 16,
+    "min_chl_a_mg_m3": 2.0,
+    "max_chl_a_mg_m3": 20.0
+  },
+  {
+    "scientificName": "Carcharhinus leucas",
+    "common_name": "Bull Shark",
+    "min_temp_c": 20,
+    "max_temp_c": 30,
+    "min_chl_a_mg_m3": 0.5,
+    "max_chl_a_mg_m3": 2.5
+  },
+  {
+    "scientificName": "Carcharias taurus",
+    "common_name": "Sand Tiger Shark",
+    "min_temp_c": 12,
+    "max_temp_c": 22,
+    "min_chl_a_mg_m3": 0.4,
+    "max_chl_a_mg_m3": 2.0
+  },
+  {
+    "scientificName": "Prionace glauca",
+    "common_name": "Blue Shark",
+    "min_temp_c": 12,
+    "max_temp_c": 21,
+    "min_chl_a_mg_m3": 0.1,
+    "max_chl_a_mg_m3": 1.0
+  },
+  {
+    "scientificName": "Sphyrna mokarran",
+    "common_name": "Great Hammerhead",
+    "min_temp_c": 22,
+    "max_temp_c": 29,
+    "min_chl_a_mg_m3": 0.2,
+    "max_chl_a_mg_m3": 1.5
+  },
+  {
+    "scientificName": "Rhincodon typus",
+    "common_name": "Whale Shark",
+    "min_temp_c": 21,
+    "max_temp_c": 30,
+    "min_chl_a_mg_m3": 0.5,
+    "max_chl_a_mg_m3": 8.0
+  },
+  {
+    "scientificName": "Carcharhinus longimanus",
+    "common_name": "Oceanic Whitetip Shark",
+    "min_temp_c": 20,
+    "max_temp_c": 28,
+    "min_chl_a_mg_m3": 0.05,
+    "max_chl_a_mg_m3": 0.2
+  },
+  {
+    "scientificName": "Alopias pelagicus",
+    "common_name": "Pelagic Thresher Shark",
+    "min_temp_c": 20,
+    "max_temp_c": 26,
+    "min_chl_a_mg_m3": 0.1,
+    "max_chl_a_mg_m3": 0.9
+  },
+  {
+    "scientificName": "Carcharhinus amblyrhynchos",
+    "common_name": "Grey Reef Shark",
+    "min_temp_c": 23,
+    "max_temp_c": 28,
+    "min_chl_a_mg_m3": 0.05,
+    "max_chl_a_mg_m3": 0.3
+  },
+  {
+    "scientificName": "Mitsukurina owstoni",
+    "common_name": "Goblin Shark",
+    "min_temp_c": 3,
+    "max_temp_c": 12,
+    "min_chl_a_mg_m3": 0.01,
+    "max_chl_a_mg_m3": 0.1
+  },
+  {
+    "scientificName": "Isistius brasiliensis",
+    "common_name": "Cookiecutter Shark",
+    "min_temp_c": 18,
+    "max_temp_c": 26,
+    "min_chl_a_mg_m3": 0.05,
+    "max_chl_a_mg_m3": 0.2
+  },
+  {
+    "scientificName": "Stegostoma tigrinum",
+    "common_name": "Zebra Shark",
+    "min_temp_c": 22,
+    "max_temp_c": 29,
+    "min_chl_a_mg_m3": 0.08,
+    "max_chl_a_mg_m3": 0.5
+  },
+  {
+    "scientificName": "Hexanchus griseus",
+    "common_name": "Bluntnose Sixgill Shark",
+    "min_temp_c": 5,
+    "max_temp_c": 15,
+    "min_chl_a_mg_m3": 0.01,
+    "max_chl_a_mg_m3": 0.1
+  },
+  {
+    "scientificName": "Orectolobus maculatus",
+    "common_name": "Spotted Wobbegong",
+    "min_temp_c": 14,
+    "max_temp_c": 22,
+    "min_chl_a_mg_m3": 0.1,
+    "max_chl_a_mg_m3": 0.6
+  },
+  {
+    "scientificName": "Squatina squatina",
+    "common_name": "Angel Shark",
+    "min_temp_c": 8,
+    "max_temp_c": 20,
+    "min_chl_a_mg_m3": 0.5,
+    "max_chl_a_mg_m3": 2.0
+  },
+  {
+    "scientificName": "Heterodontus portusjacksoni",
+    "common_name": "Port Jackson Shark",
+    "min_temp_c": 12,
+    "max_temp_c": 24,
+    "min_chl_a_mg_m3": 0.4,
+    "max_chl_a_mg_m3": 1.8
+  },
+  {
+    "scientificName": "Carcharhinus brevipinna",
+    "common_name": "Spinner Shark",
+    "min_temp_c": 20,
+    "max_temp_c": 28,
+    "min_chl_a_mg_m3": 0.5,
+    "max_chl_a_mg_m3": 2.2
+  },
+  {
+    "scientificName": "Ginglymostoma cirratum",
+    "common_name": "Nurse Shark",
+    "min_temp_c": 21,
+    "max_temp_c": 29,
+    "min_chl_a_mg_m3": 0.08,
+    "max_chl_a_mg_m3": 0.5
+  }
+]
