@@ -12,6 +12,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import the main function from index.py
 from index import batch_predict, load_models, predict_shark_habitat,predict_shark_presence
+from rag_chain import build_rag_chain
 
 # Initialize FastAPI app
 app = FastAPI(title="Shark Prediction API", version="1.0.0")
@@ -25,8 +26,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-class PredictionRequest(BaseModel):
-    geojson_file: str = "sharks_zone2.geojson"  # Default file
+class PredictionRequest(BaseModel):  # Default file
     points_per_polygon: int = 200
     prediction_date: str = "2030-05-14"
     point_generation_method: str = "adaptive"  # 'random', 'grid', or 'adaptive'
@@ -66,11 +66,11 @@ async def shark_presence(date:str):
     """
     try:
         # Call the main function from index.py
-        geojson_file: str = "sharks_zone2.geojson"  # Default file
+        geojson_file = "initial_zone_1_epsilon.geojson"
         points_per_polygon: int = 200
         point_generation_method: str = "adaptive"  # 'random', 'grid', or 'adaptive'
         epsilon: float = 2.0  # DBSCAN parameter
-        min_samples: int = 5  # DBSCAN parameter
+        min_samples: int = 4  # DBSCAN parameter
         geojson_data = predict_shark_presence(
             geojson_file=geojson_file,
             points_per_polygon=points_per_polygon,
@@ -110,7 +110,7 @@ async def shark_habitat(date:str, shark_name:str):
     """
     try:
         # Call the main function from index.py
-        geojson_file: str = "sharks_zone2.geojson"  # Default file
+        geojson_file = "initial_zone_1_epsilon.geojson"
         points_per_polygon: int = 200
         point_generation_method: str = "adaptive"  # 'random', 'grid', or 'adaptive'
         epsilon: float = 2.0  # DBSCAN parameter
@@ -183,6 +183,22 @@ async def location_predict(lat: float, lon: float, date: str = "2030-05-14"):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Simple prediction failed: {str(e)}")
+class Question(BaseModel):
+    context: list[str]
+    question: str
+
+# Global variable for lazy loading
+rag_chain = None
+
+def get_rag_chain():
+    global rag_chain
+    if rag_chain is None:
+        try:
+            rag_chain = build_rag_chain()
+        except Exception as e:
+            raise HTTPException(status_code=503, detail=f"RAG chain initialization failed: {str(e)}")
+    return rag_chain
+
 
 if __name__ == "__main__":
     import uvicorn

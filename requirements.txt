@@ -2,6 +2,8 @@ fastapi>=0.115.0
 uvicorn[standard]>=0.30.0
 pydantic>=2.7.0
 
+
+
 numpy>=1.26.0
 pandas>=2.2.0
 pyarrow>=15.0.0
@@ -18,3 +20,4 @@ rtree>=1.0.0
 
 # GeoJSON utilities
 geojson>=3.1.0
+

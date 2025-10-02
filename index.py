@@ -18,7 +18,6 @@ def load_models():
     models = {
         'sst': joblib.load('models/sst.joblib'),
         'ssh': joblib.load('models/ssh.joblib'),
-        'ssha_scaler': joblib.load('models/ssha_model_robust_dependent_tuned.joblib')['scaler'],
         'chla': joblib.load('models/chloro_model_log_independent_tuned.joblib'),
         'shark': joblib.load('models/shark_presence.joblib')
     }
@@ -248,7 +247,7 @@ def batch_predict(input_data, models):
 
     return results
 
-def predict_shark_presence(geojson_file='sharks_zone2.geojson', points_per_polygon=200, 
+def predict_shark_presence(geojson_file='initial_zone_1_epsilon.geojson', points_per_polygon=200, 
                  prediction_date='2030-05-14', point_generation_method='adaptive',
                  epsilon=1, min_samples=5):
     """
@@ -261,14 +260,14 @@ def predict_shark_presence(geojson_file='sharks_zone2.geojson', points_per_polyg
         # Load GeoJSON polygons
         gdf = load_geojson_polygons(geojson_file)
 
-        # Generate prediction points
+        #Generate prediction points
         # prediction_points = generate_prediction_points(
         #     gdf,
         #     points_per_polygon=points_per_polygon,
         #     method=point_generation_method,
         #     target_date=prediction_date
         # )
-        # Save generated prediction points to CSV
+        # #Save generated prediction points to CSV
         # try:
         #     prediction_points.to_parquet('prediction_points.parquet', index=False)
         # except Exception:
@@ -322,7 +321,7 @@ def predict_shark_presence(geojson_file='sharks_zone2.geojson', points_per_polyg
     except Exception as e:
         print(f"Error in main function: {e}")
         return None
-def predict_shark_habitat(geojson_file='sharks_zone2.geojson', points_per_polygon=200, 
+def predict_shark_habitat(geojson_file='initial_zone_1_epsilon.geojson', points_per_polygon=200, 
                  prediction_date='2030-05-14', point_generation_method='adaptive',
                  epsilon=1, min_samples=5, shark_name=""):
     """
@@ -336,6 +335,9 @@ def predict_shark_habitat(geojson_file='sharks_zone2.geojson', points_per_polygo
         sharks = json.load(open('sharks.json'))
         prediction_points = pd.read_parquet('prediction_points.parquet')
         shark=next((shark for shark in sharks if shark['common_name'] == shark_name), None)
+        print(shark)
+        print(shark_name)
+        
         if shark:
             min_temp_c = shark['min_temp_c']
             max_temp_c = shark['max_temp_c']
@@ -344,7 +346,8 @@ def predict_shark_habitat(geojson_file='sharks_zone2.geojson', points_per_polygo
             results = batch_predict(prediction_points, models)
             dframe = pd.DataFrame(results)
             
-            filtered_coords = dframe.loc[(dframe['predicted_sst'].between(min_temp_c, max_temp_c)) & (dframe['predicted_chla'].between(min_chl, max_chl)),['lon', 'lat']].to_numpy()
+            # filtered_coords = dframe.loc[(dframe['predicted_sst'].between(min_temp_c, max_temp_c)) & (dframe['predicted_chla'].between(min_chl, max_chl)),['lon', 'lat']].to_numpy()
+            filtered_coords = dframe.loc[(dframe['predicted_sst'].between(min_temp_c, max_temp_c)) ,['lon', 'lat']].to_numpy()
         # Generate prediction points
         # prediction_points = generate_prediction_points(
         #     gdf,
@@ -407,7 +410,7 @@ def predict_shark_habitat(geojson_file='sharks_zone2.geojson', points_per_polygo
 # Main execution
 if __name__ == "__main__":
     # Configuration
-    GEOJSON_FILE = 'sharks_zone2.geojson'  # Updated path
+    GEOJSON_FILE = 'initial_zone_1_epsilon.geojson'  # Updated path
     POINTS_PER_POLYGON = 200
     PREDICTION_DATE = '2030-05-14'
     POINT_GENERATION_METHOD = 'adaptive'
