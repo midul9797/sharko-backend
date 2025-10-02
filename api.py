@@ -12,8 +12,6 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import the main function from index.py
 from index import batch_predict, load_models, predict_shark_habitat,predict_shark_presence
-from rag_chain import build_rag_chain
-
 # Initialize FastAPI app
 app = FastAPI(title="Shark Prediction API", version="1.0.0")
 
